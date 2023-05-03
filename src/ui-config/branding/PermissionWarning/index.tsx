@@ -19,8 +19,6 @@ interface PermissionWarningProps {
   children: React.ReactElement;
 }
 
-const ONBOARDING_URL = process.env.REACT_APP_CENTRIFUGE_ONBOARDING_URL;
-
 /**
  * Is rendered when you're trying to perform an action you are not allowed to
  * @param requiredPermission holds the permission currently needed
