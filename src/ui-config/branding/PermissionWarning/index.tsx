@@ -4,7 +4,6 @@ import { useIntl } from 'react-intl';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { ExtendedMarketDataType } from '../../markets';
 import Caption from '../../../components/basic/Caption';
-import DefaultButton from '../../../components/basic/DefaultButton';
 import ContentWrapper from '../../../components/wrappers/ContentWrapper';
 import ScreenWrapper from '../../../components/wrappers/ScreenWrapper';
 import { isFeatureEnabled } from '../../../helpers/config/markets-and-network-config';
