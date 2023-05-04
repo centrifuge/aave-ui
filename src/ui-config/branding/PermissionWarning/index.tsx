@@ -72,9 +72,7 @@ const PermissionWarning: React.FC<
             }
           />
         ) : requiredPermission === PERMISSION.DEPOSITOR ? (
-          <Caption
-            title="Currently, it is not possible to onboard to the RWA market."
-          />
+          <Caption title="Currently, it is not possible to onboard to the RWA market." />
         ) : requiredPermission === PERMISSION.LIQUIDATOR ? (
           <Caption
             title={intl.formatMessage(messages.caption)}
