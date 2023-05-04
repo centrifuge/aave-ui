@@ -4,7 +4,6 @@ import { useIntl } from 'react-intl';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { ExtendedMarketDataType } from '../../markets';
 import Caption from '../../../components/basic/Caption';
-import DefaultButton from '../../../components/basic/DefaultButton';
 import ContentWrapper from '../../../components/wrappers/ContentWrapper';
 import ScreenWrapper from '../../../components/wrappers/ScreenWrapper';
 import { isFeatureEnabled } from '../../../helpers/config/markets-and-network-config';
@@ -18,8 +17,6 @@ interface PermissionWarningProps {
   requiredPermission: PERMISSION;
   children: React.ReactElement;
 }
-
-const ONBOARDING_URL = process.env.REACT_APP_CENTRIFUGE_ONBOARDING_URL;
 
 /**
  * Is rendered when you're trying to perform an action you are not allowed to
@@ -75,23 +72,7 @@ const PermissionWarning: React.FC<
             }
           />
         ) : requiredPermission === PERMISSION.DEPOSITOR ? (
-          <Caption
-            title="Onboarding required"
-            description={
-              <>
-                To participate in the RWA Market you will need to complete KYC and sign a
-                Subscription Agreement with the Issuer, RWA Market LLC.
-                <br />
-                <div style={{ display: 'inline-block', marginTop: '30px' }}>
-                  <DefaultButton
-                    onClick={() => window.open(ONBOARDING_URL, '_blank')}
-                    title="Start onboarding"
-                    size="big"
-                  />
-                </div>
-              </>
-            }
-          />
+          <Caption title="Currently, it is not possible to onboard to the RWA market." />
         ) : requiredPermission === PERMISSION.LIQUIDATOR ? (
           <Caption
             title={intl.formatMessage(messages.caption)}
